@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('todos.index')->with('todos',$todos);
 
 });
+// using resource route for some actions like edit and show individual values.
 Route::resource('todos','TodoController');
-Route::get('/alltodos','TodoController@index');
 Route::post('create','TodoController@store')->name('store');
+Route::post('edit','TodoController@update')->name('update');

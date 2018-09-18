@@ -74,6 +74,8 @@ class TodoController extends Controller
     public function edit($id)
     {
         //
+        $todo = Todo::find($id);
+        return view('todos.edit')->with('todo',$todo);
     }
 
     /**
@@ -83,9 +85,18 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        //return 123;
+        $todo = Todo::find($request->todoId);
+        $todo->text = $request->input('title');
+        $todo->body = $request->input('body');
+        $todo->due = $request->input('due');
+
+        $todo->save();
+
+
     }
 
     /**
