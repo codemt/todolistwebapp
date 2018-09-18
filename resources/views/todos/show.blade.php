@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="jumbotron">
-        <h1 class="display-3"><a href="todos/{{$todo->id}}">{{ $todo->text }} </a> </h1>
+        <h1 class="display-3"><a href="{{$todo->id}}">{{ $todo->text }} </a> </h1>
         {{-- <p class="lead">{{ $todo->body }}</p> --}}
         
         <p>{{ $todo->body }}</p>

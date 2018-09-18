@@ -1,5 +1,6 @@
 <?php
 
+use App\Todo;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+
+    $todos = Todo::all();
+    return view('todos.index')->with('todos',$todos);
+
 });
 Route::resource('todos','TodoController');
 Route::get('/alltodos','TodoController@index');

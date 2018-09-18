@@ -14,6 +14,7 @@
                         <p>{{ $todo->due }}</p>
                         <p class="lead">
                         </p>
+                    <a href="todos/{{$todo->id}}/edit"> Edit </a>
                       </div>
              
                 @endforeach
