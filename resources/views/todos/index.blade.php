@@ -15,6 +15,12 @@
                         <p class="lead">
                         </p>
                     <a href="todos/{{$todo->id}}/edit"> Edit </a>
+                    <form action="{{ route('delete' ) }}" method="post">
+                        {{ csrf_field() }}
+                    <input type="hidden" name="todoId" value="{{ $todo->id }}">
+                    <button type="submit" class="btn btn-primary pull-right">delete</button>
+                    </form>
+                  
                       </div>
              
                 @endforeach

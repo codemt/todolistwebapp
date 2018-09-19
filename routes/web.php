@@ -23,3 +23,6 @@ Route::get('/', function () {
 Route::resource('todos','TodoController');
 Route::post('create','TodoController@store')->name('store');
 Route::post('edit','TodoController@update')->name('update');
+
+// delete request.
+Route::post('delete','TodoController@destroy')->name('delete');
