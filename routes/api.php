@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('ng/get/todos','APIController@getAllTodos');
+
+Route::post('ng/store/todo','APIController@storeTodo');
+
+//edit todo
+Route::get('ng/store/todo/edit/{id}','APIController@editTodo');
